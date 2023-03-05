@@ -1,0 +1,27 @@
+// Color Palette
+$color-blue1: #0E3164;
+$color-blue2: #093069;
+$color-blue-black: #001431;
+$color-golden: #C49603;
+$color-golden2: #BCAC67;
+$color-white: #fff;
+$color-black: #000;
+$color-separation: #e1e1e1;
+// FONT
+$default-font-size: 1.6rem;
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
+
+
+//NAVIGATOR
+$menu-color: #ffffff;
+$menu-font-size: 3rem;
+$menu-zindex: 1100;
+$hamburger-color: #fff;
+$hamburger-width: 90px;
+$hamburger-height: 70px;
+$hamburger-zindex: $menu-zindex + 10;

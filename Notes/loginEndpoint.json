@@ -1,0 +1,29 @@
+{
+    "email": "arturormzh1223@gmail.com",
+    "password": "UnoDosTres4."
+}
+
+
+{
+    "code": 401,
+    "message": "Acceso no autorizado.",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcnVmZnNzdHVkaW9zLmNvbVwvYXBpX3RpZW5kYVByb2R1Y3Rvc1wvcHVibGljXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY2OTc1MTc1NiwiZXhwIjoxNjY5NzU1MzU2LCJuYmYiOjE2Njk3NTE3NTYsImp0aSI6Ik52Q3pzRnpIck94a0JzNXUiLCJzdWIiOiIzYzQ3MDBmMi0xNDBhLTRlZjktYjc3YS01YTM5YzBjZjdmMGQiLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.2ZCIA0K_sJOaR0YezCNPoH4U_dDq4MXaHH_T7AC5UBw",
+    "token_type": "bearer",
+    "expires_in": "4500"
+}
+{
+  "headers":{
+    "normalizedNames":{},
+    "lazyUpdate":null
+  },
+  "status":401,
+  "statusText":"OK",
+  "url":"https://ruffsstudios.com/api_tiendaProductos/public/auth/login",
+  "ok":false,
+  "name":"HttpErrorResponse",
+  "message":"Http failure response for https://ruffsstudios.com/api_tiendaProductos/public/auth/login: 401 OK",
+  "error":{
+    "code":401,
+    "message":"Acceso no autorizado."
+  }
+}

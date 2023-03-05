@@ -1,0 +1,27 @@
+<section class="form">
+
+  <div class="form__container ">
+    <div class="form__container--img"></div>
+    <form class="form__content" [formGroup]="loginForm" (ngSubmit)="tryLogin()" >
+      <h1 class="form__content__title">Welcome back</h1>
+      <input class="form__content__input " placeholder="Email"
+      id="email" type="text" formControlName="email"
+      [ngClass]="{'form__content__is-invalid': submitted && loginForm.controls['email'].errors }">
+      <input class="form__content__input " placeholder="Password"
+      id="password" type="text" formControlName="password"
+      [ngClass]="{'form__content__is-invalid': submitted && loginForm.controls['password'].errors }">
+
+      <div *ngIf="submitted && loginForm.invalid">
+        <p class="form__content__error"> Please fill all the form</p>
+      </div>
+
+      <button class="form__content__btn-submit" type="submit" >Login</button>
+    </form>
+    <a class="form__content__link" routerLink="/auth/registro">Ir a Registro</a>
+  </div>
+</section>
+
+<div *ngIf="displayMsg">
+  <app-modal-dialog [data]="service" [gotError]="gotErrors"></app-modal-dialog>
+</div>
+

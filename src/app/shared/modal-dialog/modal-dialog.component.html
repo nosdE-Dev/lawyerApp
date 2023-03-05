@@ -1,0 +1,9 @@
+<div class="modal" [ngClass]="[modalStyle]" id="modal">
+  <div class="modal__content">
+    <a (click)="openModal()" href="registro" class="modal__close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">{{title}}</h2>
+          <p *ngFor="let err of serviceText1.split('$')" class="modal__text">
+            {{err}}
+          </p>
+  </div>
+</div>

@@ -1,0 +1,200 @@
+.navigation {
+  &__checkbox {
+      display: none;
+  }
+
+  &__button {
+    //background-color: $color-white;
+    height: 6rem;
+    width: 6rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    //border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    text-align: center;
+    cursor: pointer;
+
+    @include respond(tab-port) {
+        top: 4rem;
+        right: 4rem;
+    }
+
+    @include respond(phone) {
+        top: 3rem;
+        right: 3rem;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    margin-top: 3rem;
+    &,
+    &::before,
+    &::after {
+        width: 4rem;
+        height: 3px;
+        background-color: $color-golden;
+        display: inline-block;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all .7s;
+    }
+
+    &::before { top: -.8rem; }
+    &::after { top: .8rem; }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1.3rem;
+  }
+
+  &__button:hover &__icon::after {
+      top: 1.3rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+      background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+      top: 0;
+      transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+      top: 0;
+      transform: rotate(-135deg);
+  }
+}
+
+.navigation-menu {
+  background: $color-blue-black;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  transition: all 0.7s ease-in-out;
+  // For some sweet fadez
+  visibility: hidden;
+  width: 100%;
+  z-index: $menu-zindex;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+
+    @for $i from 1 through 10 {
+
+      li:nth-child(#{$i}) {
+        animation-delay: $i*0.1s;
+      }
+    }
+
+    li {
+      animation-duration: 1.0s;
+      animation-fill-mode: both;
+      animation-name: fadeInUp;
+    }
+  }
+
+  ul {
+    &:hover {
+
+      a {
+        opacity: 0.5;
+      }
+    }
+
+    a {
+      -webkit-transform: translateZ(0);
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .main-nav {
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li{
+        max-width: 15%;
+       margin: 0 auto;
+       @include respond(phone){
+        max-width: 100%;
+       }
+       @include respond(tab-port){
+        max-width: 100%;
+       }
+      }
+    }
+
+    a {
+      color: $menu-color;
+      display: block;
+      font-family: MontLight;
+      font-size: $menu-font-size;
+      font-weight: bold;
+      padding: 1rem 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:first {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .menu-footer {
+    padding: 2rem;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+
+    ul {
+      display: inline-block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline;
+        margin: 0 1rem;
+      }
+    }
+
+    a {
+      color: $menu-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: MontLight;
+    }
+    &__fbicon , &__instaicon, &__tiktokicon{
+      font-size: 2.8rem;
+      color: $color-golden;
+    }
+  }
+}
+
+
+
+
+
+

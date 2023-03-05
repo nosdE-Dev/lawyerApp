@@ -1,0 +1,27 @@
+<section class="form">
+  <div class="form__container ">
+    <div class="form__container--img"></div>
+    <form class="form__content" [formGroup]="registerForm" (ngSubmit)="doRegister()" >
+      <h1 class="form__content--title">Registro</h1>
+      <input class="form__content__input" placeholder="FullName"  id="fullname" type="text" formControlName="full_name" >
+
+      <input class="form__content__input" placeholder="Email"  id="email" type="text" formControlName="email" >
+
+      <input class="form__content__input" placeholder="Password" id="password" type="text" formControlName="password" >
+      <input class="form__content__input" placeholder="Confirm Password"  id="passwordconf" type="text" formControlName="password_confirmation" >
+
+      <input class="form__content__input" placeholder="Address"  id="address" type="text" formControlName="billing_address" >
+      <input class="form__content__input" placeholder="Shipping Address"  id="shipingadd" type="text" formControlName="default_shipping_address" >
+      <input class="form__content__input" placeholder="Country"  id="country" type="text" formControlName="country" >
+      <input class="form__content__input" placeholder="Phone"  id="phone" type="phone" formControlName="phone" >
+
+      <button class="form__content__btn-submit" type="submit" >Registrar</button>
+    </form>
+    <a class="form__content__link" routerLink="/auth/login">Ir a Login</a>
+  </div>
+</section>
+
+<div *ngIf="displayMsg">
+  <app-modal-dialog [data]="service" [gotError]="gotErrors"></app-modal-dialog>
+</div>
+

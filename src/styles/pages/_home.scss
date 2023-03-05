@@ -1,0 +1,15 @@
+.section-hero {
+  position: relative;
+  padding: 15rem 0;
+
+  @include respond(tab-port) {
+      padding: 10rem 0;
+  }
+}
+
+.bottom-border{
+  border-bottom: 0.1rem solid $color-separation;
+  margin-bottom: 0.1rem;
+}
+
+

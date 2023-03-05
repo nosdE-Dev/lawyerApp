@@ -1,0 +1,211 @@
+<!--<div class="sidebar">
+  <div class="sidebar__header">
+    <a class="sidebar__main-logo"><i class="bi bi-braces"></i></a>
+  </div>
+  <span class="sidebar__line">&nbsp;</span>
+  <div class="sidebar__items">
+    <i class="bi bi-back sidebar__page-icon"></i>
+    <a class="sidebar__page-title "> Dashboard </a>
+  </div>
+  <div class="sidebar__items">
+    <i class="bi bi-back sidebar__page-icon"></i>
+    <a class="sidebar__page-title "> Dashboard </a>
+  </div>
+  <div class="sidebar__items">
+    <i class="bi bi-back sidebar__page-icon"></i>
+    <a class="sidebar__page-title "> Dashboard </a>
+  </div>
+  <div class="sidebar__items">
+    <i class="bi bi-back sidebar__page-icon"></i>
+    <a class="sidebar__page-title "> Dashboard </a>
+  </div>
+
+</div>-->
+
+<!--<nav class="sidebar">
+  <ul class="nav">
+    <li class="nav__items ">
+      <i class="bi bi-back"></i>
+      <a href="">Home</a>
+    </li>
+
+    <li class="nav__items ">
+      <i class="bi bi-back"></i>
+      <a href="">Productos</a>
+    </li>
+
+    <li class="nav__items ">
+      <i class="bi bi-back"></i>
+     <a href="">Otros</a>
+    </li>
+
+    <li class="nav__items ">
+      <i class="bi bi-back"></i>
+      <a href="">Configuracion</a>
+    </li>
+
+  </ul>
+</nav>-->
+********************************CSS*****************************************
+
+/*.sidebar{
+  background-color: blue;
+  height: 100%;
+  width: 5vw;
+  position: fixed;
+  left: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: inline-block;
+  transition:width .3s ease;
+  box-shadow:4px 7px 10px rgba(0,0,0,.4);
+
+  &:hover{
+    width: 10vw;
+  }
+
+  &__header{
+    width: auto;
+    height: 10vh;
+    align-items: center;
+  }
+
+  &__main-logo{
+
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__line{
+    display: block;
+    width: auto;
+    height: 0.2rem;
+    background-color: red;
+  }
+
+  &__items{
+    padding-left: 1rem;
+  }
+
+  &__page-icon{
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__page-title{
+    //display: block;
+    //margin: 0 auto;
+    //text-align: center;
+    font-size: 2rem;
+    border-radius:2px;
+    background:radial-gradient(circle at 94.02% 88.03%, #54a4ff, transparent 100%);
+    opacity:0;
+    transition:all .5s ease;
+    content: '';
+
+
+    &:after {
+
+
+    }
+
+    &:hover,&:after{
+      opacity: 1;
+    }
+
+  }
+
+}*/
+
+/*main{
+  margin-left: 6vw;
+}
+
+.sidebar{
+  position: fixed;
+  width: 5vw;
+  top:0;
+  height: 100vh;
+  z-index: 100;
+  background-color: #202020;
+  overflow:hidden;
+  transition:width .3s ease;
+  cursor:pointer;
+  box-shadow:4px 7px 10px rgba(0,0,0,.4);
+
+  &:hover {
+    width:13vw;
+  }
+
+  @include respond(phone){
+    width: 8rem;
+  }
+
+  .nav {
+    list-style-type: none;
+    color:white;
+    &:first-child {
+      padding-top:1.5rem;
+    }
+  }
+
+  .nav__items {
+    padding-bottom:4rem;
+    font-family: 'roboto';
+
+     a {
+      position: relative;
+      display:block;
+      top:-35px;
+      padding-left:25px;
+      padding-right:15px;
+      transition:all .3s ease;
+      margin-left:25px;
+      margin-right:10px;
+      text-decoration: none;
+      color:white;
+      font-family: 'roboto';
+      font-weight: 100;
+      font-size: 1.35em;
+
+       &:after {
+         content:'';
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top:0;
+         left:0;
+         border-radius:2px;
+         background:radial-gradient(circle at 94.02% 88.03%, #54a4ff, transparent 100%);
+         opacity:0;
+         transition:all .5s ease;
+         z-index: -10;
+       }
+    }
+
+    &:hover a:after {
+      opacity:1;
+    }
+
+    i{
+      width:26px;
+      height:26px;
+      position: relative;
+      //left:-25px;
+      cursor:pointer;
+      color: $color-white;
+
+    @include respond(phone){
+      width:32px;
+      height:32px;
+      left:-15px;
+      }
+    }
+  }
+
+
+}*/
