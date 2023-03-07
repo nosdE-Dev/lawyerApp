@@ -1,43 +1,185 @@
 
-<div class="container">
-  <div class="table-wrapper">
-      <table class="fl-table">
-          <thead>
-          <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Lastname</th>
-              <th>Phone</th>
-              <th>Email</th>
-              <th>Address</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-              <td>Content 1</td>
-              <td>Content 1</td>
-              <td>Content 1</td>
-              <td>Content 1</td>
-              <td>Content 1</td>
-              <td>Content 1</td>
-          </tr>
-          <tr>
-              <td>Content 2</td>
-              <td>Content 2</td>
-              <td>Content 2</td>
-              <td>Content 2</td>
-              <td>Content 2</td>
-              <td>Content 2</td>
-          </tr>
-          <tr>
-              <td>Content 3</td>
-              <td>Content 3</td>
-              <td>Content 3</td>
-              <td>Content 3</td>
-              <td>Content 3</td>
-              <td>Content 3</td>
-          </tr>
-          <tbody>
-      </table>
+<div class="grid grid__2-col" style="gap:0">
+  <div class="">
+    <section class="form">
+      <div class="form__container ">
+        <div class="form__container--img"></div>
+        <form class="form__content" [formGroup]="updateClientForm"
+        (ngSubmit)="updateClient()" >
+
+          <h1 class="form__content--title">Registrar Cliente</h1>
+          <div class="form__content form__content--products">
+
+            <div>
+              <label for="name">Name</label>
+              <input class="form__content__input" value="hola"
+              id="name" type="text" formControlName="name" >
+            </div>
+
+            <div>
+            <label for="sku">SKU</label>
+              <input class="form__content__input" placeholder="SKU"
+              id="sku" type="text" formControlName="sku" >
+            </div>
+
+            <div>
+              <label for="price">Price</label>
+              <input class="form__content__input" placeholder="Price"
+              id="price" type="number" formControlName="price" >
+            </div>
+
+
+            <div>
+              <label for="weight">Weight</label>
+              <input class="form__content__input" placeholder="Weight"
+              id="weight" type="number" formControlName="weight" >
+            </div>
+
+            <div>
+              <label for="description">Description</label>
+              <input class="form__content__input" placeholder="Description"
+              id="description" type="text" formControlName="description">
+            </div>
+
+            <div>
+              <label for="thumbnail">Thumbnail</label>
+              <input class="form__content__input" placeholder="Thumbnail"
+              id="thumbnail" type="text" formControlName="thumbnail" >
+            </div>
+
+            <div>
+              <label for="image">Image</label>
+              <input class="form__content__input" placeholder="Image"
+              id="image" type="text" formControlName="image" >
+            </div>
+
+            <div>
+              <label for="stock">Stock</label>
+              <input class="form__content__input" placeholder="stock"
+              id="stock" type="number" formControlName="stock" >
+            </div>
+
+          </div>
+          <button class="form__content__btn-submit" type="submit" >Actualizar</button>
+        </form>
+      </div>
+    </section>
   </div>
+  <div>
+
+    <div class="container">
+      <div class="table table__wrapper">
+          <table class="table__begin">
+              <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Lastname</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                  <th>Address</th>
+                  <th>Edit</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>Content 1</td>
+                  <td>Content 1</td>
+                  <td>Content 1</td>
+                  <td>Content 1</td>
+                  <td>Content 1</td>
+                  <td>Content 1</td>
+                  <td><button (click)="editClient('TEST')"><a>EDIT</a></button></td>
+              </tr>
+              <tr>
+                  <td>Content 2</td>
+                  <td>Content 2</td>
+                  <td>Content 2</td>
+                  <td>Content 2</td>
+                  <td>Content 2</td>
+                  <td>Content 2</td>
+                  <td><button><a>EDIT</a></button></td>
+              </tr>
+              <tr>
+                  <td>Content 3</td>
+                  <td>Content 3</td>
+                  <td>Content 3</td>
+                  <td>Content 3</td>
+                  <td>Content 3</td>
+                  <td>Content 3</td>
+                  <td><button><a>EDIT</a></button></td>
+              </tr>
+              <tbody>
+          </table>
+      </div>
+    </div>
+    <div *ngIf="showEdit">
+      <section class="form">
+        <div class="form__container ">
+          <div class="form__container--img"></div>
+          <form class="form__content" [formGroup]="updateClientForm"
+          (ngSubmit)="updateClient()" >
+
+            <h1 class="form__content--title">Editar Información de cliente</h1>
+            <div class="form__content form__content--products">
+
+              <div>
+                <label for="name">Name</label>
+                <input class="form__content__input" value="hola"
+                id="name" type="text" formControlName="name" >
+              </div>
+
+              <div>
+              <label for="sku">SKU</label>
+                <input class="form__content__input" placeholder="SKU"
+                id="sku" type="text" formControlName="sku" >
+              </div>
+
+              <div>
+                <label for="price">Price</label>
+                <input class="form__content__input" placeholder="Price"
+                id="price" type="number" formControlName="price" >
+              </div>
+
+
+              <div>
+                <label for="weight">Weight</label>
+                <input class="form__content__input" placeholder="Weight"
+                id="weight" type="number" formControlName="weight" >
+              </div>
+
+              <div>
+                <label for="description">Description</label>
+                <input class="form__content__input" placeholder="Description"
+                id="description" type="text" formControlName="description">
+              </div>
+
+              <div>
+                <label for="thumbnail">Thumbnail</label>
+                <input class="form__content__input" placeholder="Thumbnail"
+                id="thumbnail" type="text" formControlName="thumbnail" >
+              </div>
+
+              <div>
+                <label for="image">Image</label>
+                <input class="form__content__input" placeholder="Image"
+                id="image" type="text" formControlName="image" >
+              </div>
+
+              <div>
+                <label for="stock">Stock</label>
+                <input class="form__content__input" placeholder="stock"
+                id="stock" type="number" formControlName="stock" >
+              </div>
+
+            </div>
+            <button class="form__content__btn-submit" type="submit" >Actualizar</button>
+          </form>
+        </div>
+      </section>
+      <div style="height:200px"></div>
+    </div>
+
+  </div>
+
 </div>
