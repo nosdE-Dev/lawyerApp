@@ -1,7 +1,43 @@
-
-<div class="grid grid__2-col" style="gap:0">
-  <div class="">
-    <section class="form">
+<div class="container">
+  <div class="table table__wrapper">
+      <table class="table__begin">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Lastname</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Content 1</td>
+              <td>Content 1</td>
+              <td>Content 1</td>
+              <td>Content 1</td>
+              <td>Content 1</td>
+              <td>Content 1</td>
+              <td><button (click)="editClient('TEST')"><a>EDIT</a></button></td>
+            </tr>
+            <tr>
+              <td>Content 2</td>
+              <td>Content 2</td>
+              <td>Content 2</td>
+              <td>Content 2</td>
+              <td>Content 2</td>
+              <td>Content 2</td>
+              <td><button><a>EDIT</a></button></td>
+            </tr>
+          <tbody>
+      </table>
+  </div>
+</div>
+<div class="grid grid__2-col" style="gap: 1rem">
+  <div>
+    <section class="form form--grid">
       <div class="form__container ">
         <div class="form__container--img"></div>
         <form class="form__content" [formGroup]="updateClientForm"
@@ -66,55 +102,8 @@
     </section>
   </div>
   <div>
-
-    <div class="container">
-      <div class="table table__wrapper">
-          <table class="table__begin">
-              <thead>
-              <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Lastname</th>
-                  <th>Phone</th>
-                  <th>Email</th>
-                  <th>Address</th>
-                  <th>Edit</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td>Content 1</td>
-                  <td><button (click)="editClient('TEST')"><a>EDIT</a></button></td>
-              </tr>
-              <tr>
-                  <td>Content 2</td>
-                  <td>Content 2</td>
-                  <td>Content 2</td>
-                  <td>Content 2</td>
-                  <td>Content 2</td>
-                  <td>Content 2</td>
-                  <td><button><a>EDIT</a></button></td>
-              </tr>
-              <tr>
-                  <td>Content 3</td>
-                  <td>Content 3</td>
-                  <td>Content 3</td>
-                  <td>Content 3</td>
-                  <td>Content 3</td>
-                  <td>Content 3</td>
-                  <td><button><a>EDIT</a></button></td>
-              </tr>
-              <tbody>
-          </table>
-      </div>
-    </div>
     <div *ngIf="showEdit">
-      <section class="form">
+      <section class="form form--grid">
         <div class="form__container ">
           <div class="form__container--img"></div>
           <form class="form__content" [formGroup]="updateClientForm"
@@ -181,5 +170,4 @@
     </div>
 
   </div>
-
 </div>

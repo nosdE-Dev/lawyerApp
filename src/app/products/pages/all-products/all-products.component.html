@@ -1,41 +1,47 @@
 <div class="page-content">
 
-  <div *ngIf="isProduct">
-    <div *ngFor="let item of products[0].data">
-      <table>
-        <thead>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Action</th>
-        </thead>
-        <tbody>
-          <td>
-            {{item.id}}
-          </td>
-          <td>
-            {{item.name}}
-          </td>
-          <td>
-            {{item.price}}
-          </td>
-          <td>
-            <button (click)="editProduct(item.id)">
-              <a>Editar</a>
-            </button>
-          </td>
-        </tbody>
-      </table>
-    </div>
+  <div *ngIf="isProduct" class="table table__wrapper">
+        <table class="table__begin">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of products[0].data">
+
+                <td>
+                  {{item.id}}
+                </td>
+                <td>
+                  {{item.name}}
+                </td>
+                <td>
+                  {{item.price}}
+                </td>
+                <td>
+                  <button (click)="editProduct(item.id)">
+                    <a>Editar</a>
+                  </button>
+                </td>
+
+              </tr>
+            <tbody>
+
+        </table>
   </div>
 
-  <div *ngIf="showEdit"> 
+  <div *ngIf="showEdit">
     <a>Edit</a>
     <section class="form">
       <div class="form__container ">
         <div class="form__container--img"></div>
         <form class="form__content" [formGroup]="updateForm" (ngSubmit)="updateProduct()" >
-  
+
           <h1 class="form__content--title">Editar Producto</h1>
           <div class="form__content form__content--products">
 
@@ -96,7 +102,7 @@
     <div style="height:200px"></div>
   </div>
 
-  
+
 
   <section class="form">
     <div class="form__container ">
