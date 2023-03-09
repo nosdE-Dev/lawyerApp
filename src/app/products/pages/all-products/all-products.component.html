@@ -1,148 +1,134 @@
-<div class="page-content">
+<div *ngIf="isProduct" class="table table__wrapper">
+  <table class="table__begin">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
 
-  <div *ngIf="isProduct" class="table table__wrapper">
-        <table class="table__begin">
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Action</th>
-              </tr>
-            </thead>
+    <tbody>
+      <tr *ngFor="let item of products[0].data">
 
-            <tbody>
-              <tr *ngFor="let item of products[0].data">
+        <td>
+          {{item.id}}
+        </td>
+        <td>
+          {{item.name}}
+        </td>
+        <td>
+          {{item.price}}
+        </td>
+        <td>
+          <button (click)="editProduct(item.id)">
+            <a>Editar</a>
+          </button>
+        </td>
 
-                <td>
-                  {{item.id}}
-                </td>
-                <td>
-                  {{item.name}}
-                </td>
-                <td>
-                  {{item.price}}
-                </td>
-                <td>
-                  <button (click)="editProduct(item.id)">
-                    <a>Editar</a>
-                  </button>
-                </td>
+      </tr>
+    <tbody>
 
-              </tr>
-            <tbody>
+  </table>
+</div>
 
-        </table>
-  </div>
-
-  <div *ngIf="showEdit">
-    <a>Edit</a>
-    <section class="form">
+<div class="grid grid__2-col u-gap">
+  <div>
+    <section class="form form--grid">
       <div class="form__container ">
         <div class="form__container--img"></div>
-        <form class="form__content" [formGroup]="updateForm" (ngSubmit)="updateProduct()" >
+        <form class="form__content" [formGroup]="registerForm" (ngSubmit)="doSave()">
+
+          <h1 class="form__content--title">Registro de producto</h1>
+          <div class="form__content form__content--products">
+            <input class="form__content__input" placeholder="Name" id="name" type="text" formControlName="name">
+
+            <input class="form__content__input" placeholder="SKU" id="sku" type="text" formControlName="sku">
+
+            <input class="form__content__input" placeholder="Price" id="price" type="number" formControlName="price">
+
+            <input class="form__content__input" placeholder="Weight" id="weight" type="number" formControlName="weight">
+
+            <input class="form__content__input" placeholder="Description" id="description" type="text"
+              formControlName="description">
+
+            <input class="form__content__input" placeholder="Thumbnail" id="thumbnail" type="text"
+              formControlName="thumbnail">
+
+            <input class="form__content__input" placeholder="Image" id="image" type="text" formControlName="image">
+
+            <input class="form__content__input" placeholder="stock" id="stock" type="number" formControlName="stock">
+          </div>
+          <button class="form__content__btn-submit" type="submit">Guardar Producto</button>
+        </form>
+      </div>
+    </section>
+  </div>
+  <div *ngIf="showEdit">
+    <section class="form form--grid">
+      <div class="form__container ">
+        <div class="form__container--img"></div>
+        <form class="form__content" [formGroup]="updateForm" (ngSubmit)="updateProduct()">
 
           <h1 class="form__content--title">Editar Producto</h1>
           <div class="form__content form__content--products">
 
             <div>
               <label for="name">Name</label>
-              <input class="form__content__input" value="hola"
-              id="name" type="text" formControlName="name" >
+              <input class="form__content__input" value="hola" id="name" type="text" formControlName="name">
             </div>
 
             <div>
-            <label for="sku">SKU</label>
-              <input class="form__content__input" placeholder="SKU"
-              id="sku" type="text" formControlName="sku" >
+              <label for="sku">SKU</label>
+              <input class="form__content__input" placeholder="SKU" id="sku" type="text" formControlName="sku">
             </div>
 
             <div>
               <label for="price">Price</label>
-              <input class="form__content__input" placeholder="Price"
-              id="price" type="number" formControlName="price" >
+              <input class="form__content__input" placeholder="Price" id="price" type="number" formControlName="price">
             </div>
 
 
             <div>
               <label for="weight">Weight</label>
-              <input class="form__content__input" placeholder="Weight"
-              id="weight" type="number" formControlName="weight" >
+              <input class="form__content__input" placeholder="Weight" id="weight" type="number"
+                formControlName="weight">
             </div>
 
             <div>
               <label for="description">Description</label>
-              <input class="form__content__input" placeholder="Description"
-              id="description" type="text" formControlName="description">
+              <input class="form__content__input" placeholder="Description" id="description" type="text"
+                formControlName="description">
             </div>
 
             <div>
               <label for="thumbnail">Thumbnail</label>
-              <input class="form__content__input" placeholder="Thumbnail"
-              id="thumbnail" type="text" formControlName="thumbnail" >
+              <input class="form__content__input" placeholder="Thumbnail" id="thumbnail" type="text"
+                formControlName="thumbnail">
             </div>
 
             <div>
               <label for="image">Image</label>
-              <input class="form__content__input" placeholder="Image"
-              id="image" type="text" formControlName="image" >
+              <input class="form__content__input" placeholder="Image" id="image" type="text" formControlName="image">
             </div>
 
             <div>
               <label for="stock">Stock</label>
-              <input class="form__content__input" placeholder="stock"
-              id="stock" type="number" formControlName="stock" >
+              <input class="form__content__input" placeholder="stock" id="stock" type="number" formControlName="stock">
             </div>
 
           </div>
-          <button class="form__content__btn-submit" type="submit" >Actualizar Producto</button>
+          <button class="form__content__btn-submit" type="submit">Actualizar Producto</button>
         </form>
       </div>
     </section>
     <div style="height:200px"></div>
   </div>
-
-
-
-  <section class="form">
-    <div class="form__container ">
-      <div class="form__container--img"></div>
-      <form class="form__content" [formGroup]="registerForm" (ngSubmit)="doSave()" >
-
-        <h1 class="form__content--title">Registro de producto</h1>
-        <div class="form__content form__content--products">
-          <input class="form__content__input" placeholder="Name"
-          id="name" type="text" formControlName="name" >
-
-          <input class="form__content__input" placeholder="SKU"
-          id="sku" type="text" formControlName="sku" >
-
-          <input class="form__content__input" placeholder="Price"
-          id="price" type="number" formControlName="price" >
-
-          <input class="form__content__input" placeholder="Weight"
-          id="weight" type="number" formControlName="weight" >
-
-          <input class="form__content__input" placeholder="Description"
-          id="description" type="text" formControlName="description" >
-
-          <input class="form__content__input" placeholder="Thumbnail"
-          id="thumbnail" type="text" formControlName="thumbnail" >
-
-          <input class="form__content__input" placeholder="Image"
-          id="image" type="text" formControlName="image" >
-
-          <input class="form__content__input" placeholder="stock"
-          id="stock" type="number" formControlName="stock" >
-        </div>
-        <button class="form__content__btn-submit" type="submit" >Guardar Producto</button>
-      </form>
-    </div>
-  </section>
 </div>
+
+
 
 <!--<div *ngIf="displayMsg">
   <app-modal-dialog [data]="service" [gotError]="gotErrors"></app-modal-dialog>
 </div>-->
-
-

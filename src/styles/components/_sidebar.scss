@@ -77,7 +77,8 @@ nav {
   position: fixed;
   z-index: 9;
   top: 0;
-  right: 0;
+  left: -300rem;
+  //right: 0;
   height: 100%;
   max-width: 515px;
   width: 100%;
@@ -94,11 +95,12 @@ nav {
   transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 nav.show {
-  -webkit-transform: translateX(0px);
-  -moz-transform: translateX(0px);
-  -ms-transform: translateX(0px);
-  -o-transform: translateX(0px);
-  transform: translateX(0px);
+  //-webkit-transform: translateX(0px);
+  //-moz-transform: translateX(0px);
+  //-ms-transform: translateX(0px);
+  //-o-transform: translateX(0px);
+  transform: translateX(300rem);
+  //transform: translateX(0px);
 }
 nav.show ul.main li {
   -webkit-transform: translateX(0px);
@@ -154,15 +156,15 @@ nav ul.main {
 }
 nav ul.main li {
   margin-bottom: 20px;
-  -webkit-transform: translateX(40px);
-  -moz-transform: translateX(40px);
-  -ms-transform: translateX(40px);
-  -o-transform: translateX(40px);
-  transform: translateX(40px);
+  //-webkit-transform: translateX(40px);
+  //-moz-transform: translateX(40px);
+  //-ms-transform: translateX(40px);
+  //-o-transform: translateX(40px);
+  transform: translateX(10px);
   opacity: 0;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
+  //-webkit-transition: all 0.3s ease;
+  //-moz-transition: all 0.3s ease;
+  //-o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 nav ul.main li:last-of-type {
@@ -173,6 +175,7 @@ nav ul.main li a {
   font-family: "Raleway", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
+  //text-align: right;
   font-size: 1.5rem;
   display: block;
   letter-spacing: 5px;
