@@ -6,72 +6,84 @@
   left: 20px;
   border-radius: 4px;
   z-index: 10;
-}
-.burger span {
-  position: relative;
-  margin-top: 9px;
-  margin-bottom: 9px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -15px;
-  margin-top: -1.5px;
-}
-.burger span, .burger span::before, .burger span::after {
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: #2a2a2a;
-  outline: 1px solid transparent;
-  -webkit-transition-property: background-color, -webkit-transform;
-  -moz-transition-property: background-color, -moz-transform;
-  -o-transition-property: background-color, -o-transform;
-  transition-property: background-color, transform;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-.burger span::before, .burger span::after {
-  position: absolute;
-  content: "";
-}
-.burger span::before {
-  top: -9px;
-}
-.burger span::after {
-  top: 9px;
-}
-.burger.clicked span {
-  background-color: transparent;
-}
-.burger.clicked span::before {
-  -webkit-transform: translateY(9px) rotate(45deg);
-  -moz-transform: translateY(9px) rotate(45deg);
-  -ms-transform: translateY(9px) rotate(45deg);
-  -o-transform: translateY(9px) rotate(45deg);
-  transform: translateY(9px) rotate(45deg);
-}
-.burger.clicked span::after {
-  -webkit-transform: translateY(-9px) rotate(-45deg);
-  -moz-transform: translateY(-9px) rotate(-45deg);
-  -ms-transform: translateY(-9px) rotate(-45deg);
-  -o-transform: translateY(-9px) rotate(-45deg);
-  transform: translateY(-9px) rotate(-45deg);
-}
-.burger.clicked span:before, .burger.clicked span:after {
-  background-color: #ffffff;
-}
-.burger:hover {
-  cursor: pointer;
+
+  span {
+    position: relative;
+    margin-top: 9px;
+    margin-bottom: 9px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -1.5px;
+  }
+
+  span, span::before, span::after {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #2a2a2a;
+    outline: 1px solid transparent;
+
+    -webkit-transition-property: background-color, -webkit-transform;
+    -moz-transition-property: background-color, -moz-transform;
+    -o-transition-property: background-color, -o-transform;
+    transition-property: background-color, transform;
+
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  span::before, span::after {
+    position: absolute;
+    content: "";
+  }
+
+  span::before {
+    top: -9px;
+  }
+
+  span::after {
+    top: 9px;
+  }
+
+  &.clicked span {
+    background-color: transparent;
+  }
+
+  &.clicked span::before {
+    -webkit-transform: translateY(9px) rotate(45deg);
+    -moz-transform: translateY(9px) rotate(45deg);
+    -ms-transform: translateY(9px) rotate(45deg);
+    -o-transform: translateY(9px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  &.clicked span::after {
+    -webkit-transform: translateY(-9px) rotate(-45deg);
+    -moz-transform: translateY(-9px) rotate(-45deg);
+    -ms-transform: translateY(-9px) rotate(-45deg);
+    -o-transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  &.clicked span:before, &.clicked span:after {
+    background-color: #ffffff;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-/*  NAV
-========================================== */
+
 nav {
   background-color: $color-blue1;
   position: fixed;
@@ -89,6 +101,7 @@ nav {
   -ms-transform: translateX(100%);
   -o-transform: translateX(100%);
   transform: translateX(100%);
+
   -webkit-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   -moz-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   -o-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -99,8 +112,10 @@ nav.show {
   //-moz-transform: translateX(0px);
   //-ms-transform: translateX(0px);
   //-o-transform: translateX(0px);
+
   transform: translateX(300rem);
   //transform: translateX(0px);
+  direction: rtl;
 }
 nav.show ul.main li {
   -webkit-transform: translateX(0px);
@@ -175,7 +190,7 @@ nav ul.main li a {
   font-family: "Raleway", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  //text-align: right;
+  text-align: left;
   font-size: 1.5rem;
   display: block;
   letter-spacing: 5px;
